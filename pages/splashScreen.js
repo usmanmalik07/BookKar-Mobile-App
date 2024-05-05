@@ -1,42 +1,68 @@
 /* eslint-disable prettier/prettier */
-import {React, useEffect} from 'react';
-import {View, Text, StyleSheet} from 'react-native';
-import dashboard from './dashboard';
-import { useNavigation } from '@react-navigation/native';
+// SplashScreen.js
 
-    const splashScreen = () => {
-        const navigation = useNavigation();
+import React from 'react';
+import { View, ImageBackground, StyleSheet, Text, TouchableOpacity } from 'react-native';
 
-        useEffect(() => {
-            // Simulate a delay for the splash screen
-            setTimeout(() => {
-                // Navigate to the main screen after the delay
-                // You can replace 'MainScreen' with the actual name of your main screen component
-                navigation.replace(dashboard);
-            }, 2000); // 2000 milliseconds = 2 seconds
-        }, []);
-    
 
-return (
-        <View style={styles.container}>
-            <Text style={styles.text}>Splash Screen</Text>
-        </View>
-    );
-};// Move this closing curly brace to the end of the code block
+const SplashScreen = () => {
 
+  return (
+    <ImageBackground
+      source={require('../assets/images/splash.jpg')} // Change the path to your image
+      style={styles.imageBackground}
+    >
+      <View style={styles.overlay}>
+        <Text style={styles.companyName}>Welcome To RentKar</Text>
+        <Text style={styles.description}>
+        Your ultimate companion for seamless car rental experiences.
+         Whether it's a spontaneous road trip or planned travel, BookKar puts the power of mobility in your hands.
+          With just a few taps, explore a diverse fleet of vehicles tailored to your needs
+        </Text>
+        <TouchableOpacity style={styles.button} >
+          <Text style={styles.buttonText}>Get Started</Text>
+        </TouchableOpacity>
+      </View>
+    </ImageBackground>
+  );
+};
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
-    text: {
-        fontSize: 24,
-        fontWeight: 'bold',
-    },
+  imageBackground: {
+    flex: 1,
+    resizeMode: 'cover',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  overlay: {
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    padding: 20,
+    borderRadius: 10,
+    alignItems: 'center',
+  },
+  companyName: {
+    fontSize: 32,
+    fontWeight: 'bold',
+    color: 'white',
+    marginBottom: 10,
+  },
+  description: {
+    fontSize: 16,
+    color: 'white',
+    textAlign: 'center',
+    marginBottom: 20,
+  },
+  button: {
+    backgroundColor: 'white',
+    paddingVertical: 10,
+    paddingHorizontal: 20,
+    borderRadius: 20,
+  },
+  buttonText: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    color: 'black',
+  },
 });
 
-export default splashScreen;
-
-
+export default SplashScreen;
