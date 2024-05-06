@@ -1,25 +1,22 @@
-/* eslint-disable prettier/prettier */
-// SplashScreen.js
-
 import React from 'react';
 import { View, ImageBackground, StyleSheet, Text, TouchableOpacity } from 'react-native';
-
+// import { useNavigation } from '@react-navigation/native';
+// import dashboard from './dashboard';
 
 const SplashScreen = () => {
-
   return (
     <ImageBackground
-      source={require('../assets/images/splash.jpg')} // Change the path to your image
+      source={require('../assets/images/splash.jpg')}
       style={styles.imageBackground}
     >
       <View style={styles.overlay}>
         <Text style={styles.companyName}>Welcome To RentKar</Text>
         <Text style={styles.description}>
-        Your ultimate companion for seamless car rental experiences.
-         Whether it's a spontaneous road trip or planned travel, BookKar puts the power of mobility in your hands.
+          Your ultimate companion for seamless car rental experiences.
+          Whether it's a spontaneous road trip or planned travel, BookKar puts the power of mobility in your hands.
           With just a few taps, explore a diverse fleet of vehicles tailored to your needs
         </Text>
-        <TouchableOpacity style={styles.button} >
+        <TouchableOpacity style={styles.button}>
           <Text style={styles.buttonText}>Get Started</Text>
         </TouchableOpacity>
       </View>

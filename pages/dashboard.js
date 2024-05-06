@@ -7,6 +7,7 @@ const dashboard = () => {
         <View style={styles.container}>
             <Text style={styles.title}>Dashboard</Text>
             {/* Add your dashboard content here */}
+            <Text>hishfhfffjdf</Text>
         </View>
     );
 };
